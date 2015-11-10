@@ -1,0 +1,170 @@
+.ccm-panel-detail-open body,
+.ccm-panel-left body {
+  overflow: visible !important;
+}
+.page-list-masonry {
+  margin-left: -15px;
+}
+.page-list-masonry.with-gap .masonry-item {
+  margin-bottom: 24px;
+}
+.page-list-masonry.with-gap .info {
+  left: 15px;
+  right: 15px;
+}
+.page-list-masonry .vertical-align {
+  left: 24px;
+  right: 24px;
+  width: auto;
+}
+.page-list-masonry picture {
+  display: block;
+  overflow: hidden;
+}
+
+/* -- Filter set -- */
+
+ul.filter-set {
+  margin-bottom: 24px;
+}
+ul.filter-set li {
+  margin-right: 9px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+ul.filter-set li a {
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color:#fff;
+}
+ul.filter-set li a.active {
+  background-color: rgba(250, 250, 250, 0.8);
+  color: #999;
+}
+/*  Keyword */
+
+ul.filter-set li.search-filter-wrapper {
+  float: right;
+}
+ul.filter-set li.search-filter-wrapper input {
+  font-weight: 300;
+}
+
+/*-- Item Overlay --*/
+
+.portfolio-gallery .info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 24px;
+  background-color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+.portfolio-gallery .info:hover {
+  opacity: 1;
+}
+.portfolio-gallery .info p {
+  font-size: .8em;
+  margin-bottom: 24px;
+}
+.portfolio-gallery .info h4 {
+  position: relative;
+  padding-bottom: 9px;
+  margin-top: 0;
+  margin-bottom: 9px;
+}
+.portfolio-gallery .info h4:after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: #000000;
+  bottom: 0;
+  left: 50%;
+  margin-left: -12px;
+}
+.placeholder {
+  max-width: 100%;
+  height: auto;
+}
+
+/* -- Popup-me -- */
+
+.mfp-effect.mfp-wrap .mfp-content {
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.white-popup {
+  position: relative;
+  background: #000000;
+  padding: 24px;
+  width: auto;
+  max-width: 500px;
+  margin: 20px auto;
+}
+.white-popup.large-popup {
+  max-width: 800px !important;
+  padding: 32px;
+}
+.white-popup img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* -- Popup Effect -- */
+
+.mfp-effect.mfp-wrap .mfp-content {
+  opacity: 0;
+  transform: translateY(-20px) perspective(2000px) rotateX(10deg);
+}
+.mfp-effect.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+  transform: translateY(0) perspective(600px) rotateX(0);
+}
+.mfp-effect.mfp-wrap.mfp-removing .mfp-content {
+  opacity: 0;
+  transform: translateY(-20px) perspective(2000px) rotateX(10deg);
+}
+/* -- Form in popup -- */
+.white-popup div.ccm-block-type-form div.form-group label.control-label {
+  font-weight: normal;
+}
+.white-popup span.text-muted.small {
+  font-size: 13px;
+}
+/* -- Button for popup -- */
+a.mpf-inline.open-popup-link {
+  margin-bottom: 24px;
+}
+.popup-scroll {
+  /* Overflow Scroll */
+  overflow-y: auto;
+  max-height: 80vh;
+  padding: 0 1em 0 0;
+}
+
+/* custom scrollbars - webkit only */
+
+.popup-scroll::-webkit-scrollbar {
+  background-color: #EEE;
+  width: 10px;
+}
+.popup-scroll::-webkit-scrollbar-thumb {
+  border: 1px #EEE solid;
+  border-radius: 2px;
+  background: #777;
+  -webkit-box-shadow: 0 0 8px #555 inset;
+  box-shadow: 0 0 8px #555 inset;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.popup-scroll::-webkit-scrollbar-track {
+  -webkit-box-shadow: 0 0 2px #ccc;
+  box-shadow: 0 0 2px #ccc;
+}
