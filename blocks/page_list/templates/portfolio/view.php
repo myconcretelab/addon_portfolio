@@ -5,7 +5,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 	$helper = new Concrete\Package\AddonPortfolio\Controller\AddonPortfolioHelper;
 
   $ag = \Concrete\Core\Http\ResponseAssetGroup::get();
-  $ag->requireAsset('core/style-customizer');
+  $ag->requireAsset('javascript','isotope');
 
 	$rssUrl = $showRss ? $controller->getRssUrl($b) : '';
 	$th = Loader::helper('text');
@@ -20,7 +20,6 @@ defined('C5_EXECUTE') or die("Access Denied.");
 	$topicAttributeKeyHandle = "project_topics";
 	$tagAttributeHandle = "tags";
 
-
 	if ($c->isEditMode()) : ?>
 		<?php $templateName = $controller->getBlockObject()->getBlockFilename() ?>
 	    <div class="ccm-edit-mode-disabled-item" style="width: <?php echo $width; ?>; height: <?php echo $height; ?>">
@@ -30,7 +29,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
 <?php Loader::PackageElement("page_list/sortable", 'addon_portfolio', array('o'=>$o,'tagsObject'=>$tagsObject,'bID'=>$bID,'styleObject'=>$styleObject))?>
 <?php  if ($pageListTitle): ?><div class="page-list-header"><h3><?php  echo $pageListTitle?></h3></div><?php  endif?>
-<div class="ccm-page-list page-list-masonry row <?php echo $gap ? 'with-gap' : 'no-gap' ?>" data-gridsizer=".<?php echo $column_class . intval(12 / $styleObject->columns)?>" data-bid="<?php echo $bID?>">
+<div class="portfolio-gallery page-list-masonry row <?php echo $gap ? 'with-gap' : 'no-gap' ?>" data-gridsizer=".<?php echo $column_class . intval(12 / $styleObject->columns)?>" data-bid="<?php echo $bID?>">
 	<?php  foreach ($pages as $key => $page):
 
 		$externalLink = $page->getAttribute('external_link');
