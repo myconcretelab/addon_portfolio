@@ -5,7 +5,9 @@ defined('C5_EXECUTE') or die("Access Denied.");
 	$helper = new Concrete\Package\AddonPortfolio\Controller\AddonPortfolioHelper;
 
   $ag = \Concrete\Core\Http\ResponseAssetGroup::get();
-  $ag->requireAsset('javascript','isotope');
+  $ag->requireAsset('javascript','imagesloaded');
+	$ag->requireAsset('javascript','isotope');
+	$ag->requireAsset('javascript','lazyload');
 
 	$rssUrl = $showRss ? $controller->getRssUrl($b) : '';
 	$th = Loader::helper('text');

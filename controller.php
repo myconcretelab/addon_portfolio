@@ -2,8 +2,6 @@
 namespace Concrete\Package\AddonPortfolio;
 
 defined('C5_EXECUTE') or die('Access Denied.');
-use \Concrete\Core\Block\BlockType\BlockType;
-
 use Concrete\Core\Asset\Asset;
 use Concrete\Core\Asset\AssetList;
 use Route;
@@ -20,7 +18,7 @@ class Controller extends \Concrete\Core\Package\Package {
     protected $pkg;
 
     public function getPackageDescription() {
-        return t("Add a sortable page-list to your portfolio");
+        return t("Add sortable templates to page-list");
     }
 
     public function getPackageName() {
@@ -34,13 +32,9 @@ class Controller extends \Concrete\Core\Package\Package {
     public function registerAssets()
     {
         $al = AssetList::getInstance();
-        $al->register( 'css', 'easy-gallery-view', 'blocks/addon_portfolio/stylesheet/block-view.css', array('version' => '1'), $this );
-
-        // View items
-        $al->register( 'javascript', 'imagesloaded', 'blocks/addon_portfolio/javascript/build/imagesloaded.pkgd.min.js', array('version' => '3.1.4'), $this );
-        $al->register( 'javascript', 'isotope', 'blocks/addon_portfolio/javascript/build/isotope.pkgd.min.js', array('version' => '3.1.4'), $this );
-        $al->register( 'javascript', 'lazyload', 'blocks/addon_portfolio/javascript/build/jquery.lazyload.min.js', array('version' => '1.9.1'), $this );
-
+        $al->register( 'javascript', 'imagesloaded', 'js/imagesloaded.pkgd.min.js', array('version' => '3.1.4'), $this );
+        $al->register( 'javascript', 'isotope', 'js/isotope.pkgd.min.js', array('version' => '3.1.4'), $this );
+        $al->register( 'javascript', 'lazyload', 'js/jquery.lazyload.min.js', array('version' => '1.9.1'), $this );
     }
 
     public function install() {
@@ -50,13 +44,11 @@ class Controller extends \Concrete\Core\Package\Package {
 
     // Installing
         $this->installOrUpgrade();
-
     }
 
 
     private function installOrUpgrade() {
         $ci = new MclInstaller($this->pkg);
-        $ci->importContentFile($this->getPackagePath() . '/config/install/base/blocktypes.xml');
         $ci->importContentFile($this->getPackagePath() . '/config/install/base/attributes.xml');
     }
 
