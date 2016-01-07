@@ -35,6 +35,12 @@ class Controller extends \Concrete\Core\Package\Package {
         $al->register( 'javascript', 'imagesloaded', 'js/imagesloaded.pkgd.min.js', array('version' => '3.1.4'), $this );
         $al->register( 'javascript', 'isotope', 'js/isotope.pkgd.min.js', array('version' => '3.1.4'), $this );
         $al->register( 'javascript', 'lazyload', 'js/jquery.lazyload.min.js', array('version' => '1.9.1'), $this );
+        $al->register( 'javascript', 'slick', 'js/slick.min.js', array('version' => '1.5.9'), $this );
+        $al->register( 'javascript', 'utils', 'js/utils.js', array('version' => '0.1'), $this );
+
+        $al->register( 'css', 'slick', 'css/slick.css', array('version' => '1.5.9'), $this );
+        $al->register( 'css', 'slick-theme', 'css/slick-theme.css', array('version' => '1.5.9'), $this );
+
     }
 
     public function install() {
